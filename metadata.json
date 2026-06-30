@@ -1,0 +1,6 @@
+{
+  "name": "ISRO Climate Digital Twin",
+  "description": "An advanced, AI-powered Digital Twin platform of India's Climate. Features real-time state and district-level weather insights, climate models, scenario simulations, and a generative AI assistant.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,438 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", "Poppins", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  
+  --color-isro-blue: #0E1630;
+  --color-isro-yellow: #FFC107;
+  --color-isro-light-blue: #E3F2FD;
+  --color-isro-bg: #F8FAFC;
+  --color-isro-navy: #0F172A;
+}
+
+/* Base custom resets and styling utilities for Premium Aesthetic Light Theme */
+body {
+  font-family: var(--font-sans);
+  background-color: #F1F5F9 !important;
+  color: #0F172A !important;
+  background-image: 
+    radial-gradient(at 10% 20%, rgba(14, 165, 233, 0.07) 0px, transparent 50%),
+    radial-gradient(at 90% 80%, rgba(245, 158, 11, 0.05) 0px, transparent 50%),
+    radial-gradient(at 50% 50%, rgba(241, 245, 249, 0.95) 0px, #E2E8F0 100%) !important;
+  background-attachment: fixed !important;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+  color: #0F172A !important;
+}
+
+/* Custom scrollbars matching deep space console */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(15, 23, 42, 0.08);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(15, 23, 42, 0.15);
+}
+
+/* 3D Glassmorphism Panel styles for beautiful light dashboards */
+.bg-white, [class*="bg-white"] {
+  background-color: rgba(255, 255, 255, 0.82) !important;
+  color: #0F172A !important;
+  backdrop-filter: blur(16px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.7) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.03) !important;
+  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.3s ease, border-color 0.3s ease !important;
+}
+
+/* 3D hover effects applied to main cards */
+.bg-white:hover, [class*="bg-white"]:hover {
+  transform: translateY(-4px) scale(1.01) !important;
+  border-color: rgba(14, 165, 233, 0.3) !important;
+  box-shadow: 
+    0 20px 40px rgba(15, 23, 42, 0.08), 
+    0 0 20px rgba(14, 165, 233, 0.1) !important;
+}
+
+.bg-white:active, [class*="bg-white"]:active {
+  transform: translateY(-1px) scale(0.99) !important;
+}
+
+/* Wells and sub-boxes inside panels */
+.bg-slate-50, [class*="bg-slate-50"] {
+  background-color: rgba(248, 250, 252, 0.7) !important;
+  color: #1E293B !important;
+  border: 1px solid rgba(15, 23, 42, 0.04) !important;
+  border-radius: 10px !important;
+}
+
+/* Overriding sidebar container default */
+#sidebar_container {
+  background-color: rgba(255, 255, 255, 0.85) !important;
+  border-right: 1px solid rgba(15, 23, 42, 0.08) !important;
+}
+
+/* High-contrast text overrides */
+.text-slate-800, .text-slate-900, .text-slate-700, .text-gray-800, .text-gray-900 {
+  color: #0F172A !important;
+}
+.text-slate-600, .text-slate-500, .text-gray-600, .text-gray-500 {
+  color: #475569 !important;
+}
+.text-slate-400, .text-gray-400 {
+  color: #64748B !important;
+}
+
+/* Interactive Map GIS Layer fixes */
+#interactive_map_wrapper {
+  background-color: rgba(255, 255, 255, 0.82) !important;
+  border: 1px solid rgba(15, 23, 42, 0.08) !important;
+}
+
+/* Override borders */
+.border-slate-100, .border-slate-200 {
+  border-color: rgba(15, 23, 42, 0.06) !important;
+}
+
+/* Recharts grid lines */
+.recharts-cartesian-grid line {
+  stroke: rgba(15, 23, 42, 0.05) !important;
+}
+
+/* Form inputs, select fields */
+input, textarea, select {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  color: #0F172A !important;
+  border: 1px solid rgba(15, 23, 42, 0.1) !important;
+}
+input:focus, textarea:focus, select:focus {
+  border-color: #0284C7 !important;
+  box-shadow: 0 0 10px rgba(14, 165, 233, 0.15) !important;
+}
+
+/* Orange/Amber launch button (JOIN THE MISSION) */
+.btn-cosmic-orange {
+  background: linear-gradient(135deg, #0284C7 0%, #0EA5E9 100%) !important;
+  color: #FFFFFF !important;
+  font-weight: 800 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.08em !important;
+  border: none !important;
+  box-shadow: 
+    0 4px 15px rgba(14, 165, 233, 0.25), 
+    inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+  transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+}
+.btn-cosmic-orange:hover {
+  transform: translateY(-2px) scale(1.025) !important;
+  box-shadow: 
+    0 8px 25px rgba(14, 165, 233, 0.4), 
+    0 0 12px rgba(14, 165, 233, 0.2) !important;
+}
+.btn-cosmic-orange:active {
+  transform: translateY(1px) scale(0.98) !important;
+}
+
+/* Gold bordered outline button (MISSION BRIEFING) */
+.btn-cosmic-gold-outline {
+  background: transparent !important;
+  color: #0284C7 !important;
+  border: 1px solid #0284C7 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.08em !important;
+  transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+}
+.btn-cosmic-gold-outline:hover {
+  background: rgba(14, 165, 233, 0.08) !important;
+  transform: translateY(-2px) scale(1.025) !important;
+  box-shadow: 0 0 15px rgba(14, 165, 233, 0.12) !important;
+}
+.btn-cosmic-gold-outline:active {
+  transform: translateY(1px) scale(0.98) !important;
+}
+
+/* Header navbar controls */
+header.bg-white {
+  background-color: rgba(255, 255, 255, 0.85) !important;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08) !important;
+}
+
+/* Dynamic rotating animations */
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
+}
+
+@keyframes spin-reverse {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+.animate-spin-reverse {
+  animation: spin-reverse 35s linear infinite;
+}
+
+@keyframes rotate-globe {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-rotate-globe {
+  animation: rotate-globe 45s linear infinite;
+}
+
+@keyframes bounce-slow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+.animate-bounce-slow {
+  animation: bounce-slow 4s ease-in-out infinite;
+}
+
+/* Deep Space Dark Mode overrides for full portal and interactive map */
+/* Deep Space Dark Mode overrides for full portal and interactive map */
+.dark body {
+  background-color: #04060f !important;
+  color: #F8FAFC !important;
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(249, 115, 22, 0.12) 0px, transparent 40%),
+    radial-gradient(at 100% 100%, rgba(14, 165, 233, 0.15) 0px, transparent 40%),
+    radial-gradient(at 50% 50%, rgba(10, 15, 30, 0.95) 0px, #02040a 100%) !important;
+  background-attachment: fixed !important;
+}
+
+.dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6 {
+  color: #FFFFFF !important;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+.dark .bg-white, .dark [class*="bg-white"] {
+  background-color: rgba(6, 10, 23, 0.8) !important;
+  color: #F8FAFC !important;
+  border: 1px solid rgba(249, 115, 22, 0.15) !important;
+  box-shadow: 
+    0 10px 30px rgba(0, 0, 0, 0.6), 
+    0 0 15px rgba(249, 115, 22, 0.04) !important;
+  backdrop-filter: blur(20px) !important;
+}
+
+.dark .bg-white:hover, .dark [class*="bg-white"]:hover {
+  border-color: rgba(249, 115, 22, 0.45) !important;
+  box-shadow: 
+    0 20px 45px rgba(0, 0, 0, 0.8), 
+    0 0 25px rgba(249, 115, 22, 0.22) !important;
+  transform: translateY(-4px) scale(1.01) !important;
+}
+
+.dark .bg-slate-50, .dark [class*="bg-slate-50"] {
+  background-color: rgba(3, 5, 12, 0.75) !important;
+  color: #E2E8F0 !important;
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+.dark #sidebar_container {
+  background-color: rgba(4, 6, 14, 0.92) !important;
+  border-right: 1px solid rgba(249, 115, 22, 0.12) !important;
+  box-shadow: 5px 0 30px rgba(0, 0, 0, 0.5);
+}
+
+.dark .text-slate-800, .dark .text-slate-900, .dark .text-slate-700, .dark .text-gray-800, .dark .text-gray-900 {
+  color: #F1F5F9 !important;
+}
+
+.dark .text-slate-650, .dark .text-slate-600, .dark .text-slate-500, .dark .text-gray-600, .dark .text-gray-500 {
+  color: #94A3B8 !important;
+}
+
+.dark .text-slate-400, .dark .text-gray-400 {
+  color: #64748B !important;
+}
+
+.dark #interactive_map_wrapper {
+  background-color: rgba(5, 8, 18, 0.85) !important;
+  border: 1px solid rgba(14, 165, 233, 0.2) !important;
+  box-shadow: 0 0 30px rgba(14, 165, 233, 0.08);
+}
+
+.dark .border-slate-100, .dark .border-slate-200 {
+  border-color: rgba(255, 255, 255, 0.06) !important;
+}
+
+.dark .recharts-cartesian-grid line {
+  stroke: rgba(255, 255, 255, 0.05) !important;
+}
+
+.dark input, .dark textarea, .dark select {
+  background-color: rgba(3, 5, 11, 0.9) !important;
+  color: #F8FAFC !important;
+  border: 1px solid rgba(249, 115, 22, 0.2) !important;
+}
+
+.dark input:focus, .dark textarea:focus, .dark select:focus {
+  border-color: rgba(249, 115, 22, 0.7) !important;
+  box-shadow: 0 0 15px rgba(249, 115, 22, 0.3) !important;
+}
+
+.dark header, .dark header.bg-white {
+  background-color: rgba(4, 6, 14, 0.9) !important;
+  border-bottom: 1px solid rgba(249, 115, 22, 0.12) !important;
+}
+
+.dark footer {
+  background-color: rgba(3, 5, 11, 0.95) !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+/* Dark Scrollbar styling */
+.dark ::-webkit-scrollbar-thumb {
+  background: rgba(249, 115, 22, 0.25) !important;
+  border-radius: 4px;
+}
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: rgba(249, 115, 22, 0.5) !important;
+}
+
+/* Astronomical Background Styles: Twinkling Stars & Revolving Orbits */
+@keyframes twinkle-star {
+  0%, 100% {
+    opacity: 0.15;
+    transform: scale(0.85);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.15);
+    filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.9));
+  }
+}
+
+.star-twinkle {
+  animation: twinkle-star var(--twinkle-duration, 3s) ease-in-out infinite;
+}
+
+@keyframes orbit-cw {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes orbit-ccw {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.animate-orbit-cw-1 {
+  animation: orbit-cw 35s linear infinite;
+}
+
+.animate-orbit-cw-2 {
+  animation: orbit-cw 55s linear infinite;
+}
+
+.animate-orbit-ccw-1 {
+  animation: orbit-ccw 70s linear infinite;
+}
+
+@keyframes sphere-rotation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.planetary-surface {
+  background-size: 200% 200%;
+  animation: sphere-rotation 15s ease-in-out infinite;
+}
+
+/* Custom interactive elements from video */
+.custom-cursor-active, .custom-cursor-active * {
+  cursor: none !important;
+}
+
+@keyframes grid-scroll {
+  0% {
+    transform: perspective(400px) rotateX(60deg) translateY(0);
+  }
+  100% {
+    transform: perspective(400px) rotateX(60deg) translateY(40px);
+  }
+}
+
+.cyber-grid {
+  background-image: 
+    linear-gradient(to right, rgba(249, 115, 22, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(249, 115, 22, 0.08) 1px, transparent 1px);
+  background-size: 40px 40px;
+  animation: grid-scroll 4s linear infinite;
+}
+
+@keyframes shooting-star-anim {
+  0% {
+    transform: translate3d(100px, -100px, 0) rotate(-45deg) scale(0);
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+    transform: translate3d(50px, -50px, 0) rotate(-45deg) scale(1);
+  }
+  20% {
+    transform: translate3d(-150px, 150px, 0) rotate(-45deg) scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: translate3d(-150px, 150px, 0) rotate(-45deg) scale(0);
+    opacity: 0;
+  }
+}
+
+.shooting-star {
+  position: absolute;
+  width: 150px;
+  height: 1.5px;
+  background: linear-gradient(-45deg, rgba(249, 115, 22, 1), rgba(249, 115, 22, 0));
+  filter: drop-shadow(0 0 5px rgba(249, 115, 22, 0.8));
+  opacity: 0;
+  animation: shooting-star-anim 8s ease-in-out infinite;
+}
+
+
